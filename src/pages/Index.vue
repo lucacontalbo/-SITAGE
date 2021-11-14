@@ -69,4 +69,3 @@ export default defineComponent({
 <style lang="scss">
 @import url("/src/css/home.scss");
 </style>
-
