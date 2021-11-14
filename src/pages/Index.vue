@@ -1,5 +1,5 @@
 <template>
-  <div class="q-ma-none" style="height: 100%;">
+  <div class="q-ma-none" style="height: 99%;">
     <q-carousel
       arrows
       animated
