@@ -70,36 +70,6 @@ export default {
 
 </script>
 
-<style lang="sass">
-.custom-caption
-  text-align: center
-  padding: 12px
-  color: white
-  background-color: rgba(0, 0, 0, .3)
-  
-html, body
-  height: 100%
-  width:100%
-  
-#q-app, .q-layout, .q-page-container
-  height: 100%
-  width: 100%
-
-.my-card
-  width: 50%
-  height: 100%
-
-.my-card
-  min-width: 278px
-  min-height:278px
-  max-height:278px
-
-.twoside
-  width:100%
-  height: 30%
-
-.oneside
-  width: 45%
-
+<style>
+  @import './../css/app.scss';
 </style>
-
