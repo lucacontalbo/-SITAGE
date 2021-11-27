@@ -5,7 +5,6 @@
         <q-btn
           v-if="$q.screen.xs"
           dense
-          
           flat
           round
           size="xl"
@@ -28,10 +27,10 @@
             flat
             stretch
           >
-            <q-list class="bg-primary">
-              <q-item to="/history">storia</q-item>
-              <q-item to="/who-are-we">chi siamo</q-item>
-              <q-item to="/organizational-chart">organigramma</q-item>
+            <q-list class="bg-primary text-white">
+              <q-item to="/history">Storia</q-item>
+              <q-item to="/who-are-we">Chi siamo</q-item>
+              <q-item to="/organizational-chart">Organigramma</q-item>
             </q-list>
           </q-btn-dropdown>
           <q-btn to="/projects" stretch flat>progetti</q-btn>
@@ -61,7 +60,7 @@
       <q-banner
         v-if="bannerOpen"
         inline-actions
-        class="text-white bg-red text-center"
+        class="text-white bg-negative text-center"
       >
         Dona al nostro 5x1000 o piango
         <template #action>

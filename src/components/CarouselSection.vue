@@ -1,6 +1,6 @@
 <template>
   <div class="relative-position">
-    <q-carousel arrows animated v-model="currentSlide">
+    <q-carousel infinite arrows animated v-model="currentSlide">
       <q-carousel-slide
         v-for="{ name, picture } in slides"
         :name="name"
