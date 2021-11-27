@@ -1,25 +1,21 @@
 <template>
-  <div class="cont">
-    <div
-      class="q-pt-lg q-mt-lg q-mb-lg q-pa-sx row items-start twoside justify-center"
-    >
-      <div class="q-ma-lg oneside row justify-center">
-        <div class="q-mb-lg text-h4 text-weight-light">
-          {{ header }}
-        </div>
-        <div class="q-mb-lg text-weight-light">
-          {{ body }}
-        </div>
-        <q-btn outline color="primary" label="Scopri di più" />
+  <div class="row q-ma-xl">
+    <div class="text-center col">
+      <div class="text-h4 text-weight-light">Chi siamo?</div>
+      <div class="q-mt-lg text-weight-light">
+        Associazione Giovani in Europa - APS, abbreviabile in “AGE”, è una
+        associazione di promozione sociale, che opera senza fini di lucro.
+        L’associazione persegue finalità civiche, solidaristiche e di utilità
+        sociale; essa si ispira ai principi di uguaglianza, legalità, democrazia
+        e laicità, nel rispetto dei diritti inviolabili della
+        persona.L’associazione promuove una cultura europea “dal basso”,
+        pubblicizzando la struttura, i vantaggi e le opportunità che l’Unione
+        Europea offre e che sono poco conosciuti anche tra i più giovani.
       </div>
-
-      <div class="q-ma-lg oneside row justify-center">
-        <q-card class="my-card">
-          <q-responsive :ratio="1" class="col" style="max-height: 278px">
-            <q-img :src="picture"> </q-img>
-          </q-responsive>
-        </q-card>
-      </div>
+      <q-btn outline color="primary" label="Scopri di più" class="q-mt-lg" />
+    </div>
+    <div class="col q-ml-lg text-center">
+      <img src="carousel/3.jpg" class="image" />
     </div>
   </div>
 </template>
@@ -29,29 +25,11 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "ChiSiamoComponent",
-  props: {
-    header: {
-      type: String,
-      required: true,
-    },
-    body: {
-      type: String,
-      required: true,
-    },
-    picture: {
-      type: String,
-      required: true,
-    },
-  },
 });
 </script>
 
 <style>
-.my-card {
-  width: 50%;
-  height: 100%;
-  min-width: 278px;
-  min-height: 278px;
-  max-height: 278px;
+.image {
+  height: 300px;
 }
 </style>

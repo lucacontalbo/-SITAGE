@@ -9,7 +9,7 @@
       />
     </q-carousel>
     <!--Chi Siamo section-->
-    <ChiSiamoComponent v-bind="chisiamo" />
+    <ChiSiamoComponent />
     <br />
     <v-divider></v-divider>
     <br />
@@ -54,12 +54,6 @@ const imgList = [
   },
 ];
 
-const chisiamo = {
-  header: "Chi siamo?",
-  body: "Associazione Giovani in Europa - APS, abbreviabile in “AGE”, è una associazione di promozione sociale, che opera senza fini di lucro. L’associazione persegue finalità civiche, solidaristiche e di utilità sociale; essa si ispira ai principi di uguaglianza, legalità, democrazia e laicità, nel rispetto dei diritti inviolabili della persona.L’associazione promuove una cultura europea “dal basso”, pubblicizzando la struttura, i vantaggi e le opportunità che l’Unione Europea offre e che sono poco conosciuti anche tra i più giovani.",
-  picture: "carousel/3.jpg",
-};
-
 const projList = [
   {
     index: 0,
@@ -96,7 +90,6 @@ export default defineComponent({
 
   setup() {
     return {
-      chisiamo,
       images: imgList,
       projects: projList,
       slide: ref("first"),

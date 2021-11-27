@@ -1,8 +1,6 @@
 <template>
   <div class="cont">
-    <div
-      class="q-pt-lg q-mt-lg q-mb-lg q-pa-sx row items-start twoside justify-center"
-    >
+    <div class="q-pt-lg q-mt-lg q-mb-lg q-pa-sx row items-start justify-center">
       <div class="q-pa-md row items-start q-gutter-md">
         <q-card class="card-ig" flat bordered>
           <q-img src="/ig/0_ig.jpg" />
@@ -128,8 +126,18 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass" scoped>
-.card-ig
-  width: 100%
-  max-width: 350px
+<style lang="scss" scoped>
+.card-ig {
+  width: 100%;
+  max-width: 350px;
+}
+
+.cont {
+  display: inline-block;
+  width: 100%;
+}
+
+.oneside {
+  width: 45%;
+}
 </style>
