@@ -1,0 +1,40 @@
+$white: #fff;
+$black: #000;
+
+$alpha-map: (
+  "87" 0.87,
+  "54" 0.54,
+  "38" 0.38,
+  "28" 0.28,
+  "focused-dark" 0.24,
+  "focused-light" 0.12,
+  "12" 0.12,
+  "activated-dark" 0.24,
+  "activated-light" 0.12,
+  "selected" 0.08,
+  "hover" 0.04
+);
+
+$color-map: (
+  "primary" $primary,
+  "secondary" $secondary,
+  "accent" $accent,
+  "black" $black,
+  "white" $white,
+  "positive" $positive,
+  "negative" $negative,
+  "info" $info,
+  "warning" $warning
+);
+
+@each $alpha-name, $alpha in $alpha-map {
+  @each $color-name, $color in $color-map {
+    .bg-#{$color-name}-#{$alpha-name}.bg-#{$color-name}-#{$alpha-name} {
+      background-color: rgba($color, $alpha);
+    }
+
+    .text-#{$color-name}-#{$alpha-name}.text-#{$color-name}-#{$alpha-name} {
+      color: rgba($color, $alpha);
+    }
+  }
+}
