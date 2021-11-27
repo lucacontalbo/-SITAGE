@@ -21,16 +21,22 @@
   <br>
   <v-divider></v-divider>
   <br>
+  <!--IG-->
+  <IgComponent 
+  />
+  <br>
+  <v-divider></v-divider>
+  <br>
   <!--ListaProgetti-->
-  <div class="q-ma-none">
-    <q-list :bordered="true">
+    <!--<div class="q-ma-none">-->
+    <!--<q-list :bordered="true">-->
       <ListItemComponent 
         v-for="item in projects"
         :key="item.index"
         v-bind="item"
       />
-    </q-list>
-  </div>
+    <!--</q-list>-->
+    <!--</div>-->
 </template>
 
 <script>
@@ -39,26 +45,27 @@ import { ref } from 'vue';
 import CarouselComponent from 'components/CarouselComponent.vue';
 import ChiSiamoComponent from 'components/ChiSiamoComponent.vue';
 import ListItemComponent from 'components/ListItemComponent.vue';
+import IgComponent from 'components/IgComponent.vue';
 
 const imgList =[
   {
     name: "first",
-    picture: "1.jpg"
+    picture: "carousel/1.jpg"
   },
   {
     name: "second",
-    picture: "2.jpg"
+    picture: "carousel/2.jpg"
   },
   {
     name: "third",
-    picture: "3.jpg"
+    picture: "carousel/3.jpg"
   }
 ];
 
 const chisiamo = {
   header: "Chi siamo?",
   body: "Associazione Giovani in Europa - APS, abbreviabile in “AGE”, è una associazione di promozione sociale, che opera senza fini di lucro. L’associazione persegue finalità civiche, solidaristiche e di utilità sociale; essa si ispira ai principi di uguaglianza, legalità, democrazia e laicità, nel rispetto dei diritti inviolabili della persona.L’associazione promuove una cultura europea “dal basso”, pubblicizzando la struttura, i vantaggi e le opportunità che l’Unione Europea offre e che sono poco conosciuti anche tra i più giovani.",
-  picture: "3.jpg"
+  picture: "carousel/3.jpg"
 };
 
 const projList = [
@@ -66,28 +73,33 @@ const projList = [
     index: 0,
     title: "Du iu Spik Inglish",
     text: "Il duiu è un bel progetto che faccio io quindi vienici",
-    picture: "3.jpg"
+    picture: "carousel/3.jpg"
   },
   {
     index: 1,
     title: "CampAGE",
     text: "We have fun here, lorem ipsum and all that",
-    picture: "2.jpg"
+    picture: "carousel/2.jpg"
   },
   {
     index: 2,
     title: "Ovunque",
     text: "Lorem era proprio un Ipsum ieri sera. Io non ci esco più!",
-    picture: "1.jpg"
+    picture: "carousel/1.jpg"
   }
 ];
+
+//const test = {
+//  index: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//}
 
 export default defineComponent({
   name: 'Index',
   components: {
     CarouselComponent,
     ChiSiamoComponent,
-    ListItemComponent
+    ListItemComponent,
+    IgComponent
   },
 
   setup () {

@@ -1,5 +1,5 @@
 <template>
-  <q-item :tabindex="index">
+  <!--<q-item :tabindex="index">-->
     <div class="q-pt-lg q-mt-lg q-mb-lg q-pa-sx row items-start twoside justify-center">
       <div class="q-ma-lg oneside row justify-center">
         <div class="q-mb-lg text-h4 text-weight-light">
@@ -19,7 +19,7 @@
         </q-card>
       </div>
     </div>
-  </q-item>
+  <!--</q-item>-->
 </template>
 
 <script>
