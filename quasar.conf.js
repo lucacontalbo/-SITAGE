@@ -68,6 +68,16 @@ module.exports = configure(function (ctx) {
           .plugin("eslint-webpack-plugin")
           .use(ESLintPlugin, [{ extensions: ["js", "vue"] }]);
       },
+
+      extendWebpack(cfg) {
+        cfg.module.rules.push({
+          test: /\.vue$/,
+          loader: "vue-svg-inline-loader",
+          options: {
+            addTitle: true,
+          },
+        });
+      },
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer

@@ -1,38 +1,123 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpr lFf">
+    <q-header elevated class="q-pa-none bg-primary">
       <q-toolbar>
         <q-btn
-          flat
+          v-if="$q.screen.xs"
           dense
+          
+          flat
           round
+          size="xl"
           icon="menu"
-          aria-label="Menu"
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-btn flat to="/">
+          <img class="q-pa-md" alt="AGE logo" src="~assets/logos/age.png" />
+          <span class="">AGE</span>
+        </q-btn>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <template v-if="$q.screen.gt.xs">
+          <q-space />
+
+          <q-btn to="/home" stretch flat>home</q-btn>
+          <q-btn-dropdown
+            :content-style="{ borderRadius: '0 0 4px 4px', boxShadow: 'none' }"
+            label="about"
+            flat
+            stretch
+          >
+            <q-list class="bg-primary">
+              <q-item to="/history">storia</q-item>
+              <q-item to="/who-are-we">chi siamo</q-item>
+              <q-item to="/organizational-chart">organigramma</q-item>
+            </q-list>
+          </q-btn-dropdown>
+          <q-btn to="/projects" stretch flat>progetti</q-btn>
+
+          <q-btn stretch flat>
+            <a href="https://www.facebook.com/agegiovani/" target="_blank">
+              <img
+                svg-inline
+                class="svg-logo"
+                src="../assets/logos/facebook.svg"
+                alt="Facebook logo"
+              />
+            </a>
+          </q-btn>
+          <q-btn stretch flat>
+            <a href="https://www.instagram.com/age.giovani/" target="_blank">
+              <img
+                svg-inline
+                class="svg-logo"
+                src="../assets/logos/instagram.svg"
+                alt="Instagram logo"
+              />
+            </a>
+          </q-btn>
+        </template>
       </q-toolbar>
-      <q-banner inline-actions class="text-white bg-red text-center" v-if="bannerOpen">
-      Dona al nostro 5x1000 o piango
-      <template v-slot:action>
-        <q-btn flat color="white" label="DONA!"></q-btn>
-        <q-btn flat color="white" icon="close" @click="bannerOpen=false"></q-btn>
-      </template>
-    </q-banner>
+      <q-banner
+        v-if="bannerOpen"
+        inline-actions
+        class="text-white bg-red text-center"
+      >
+        Dona al nostro 5x1000 o piango
+        <template #action>
+          <q-btn flat color="white" label="DONA!"></q-btn>
+          <q-btn
+            flat
+            color="white"
+            icon="close"
+            @click="bannerOpen = false"
+          ></q-btn>
+        </template>
+      </q-banner>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer
+      v-if="$q.screen.xs"
+      v-model="leftDrawerOpen"
+      overlay
+      elevated
+      content-class="bg-secondary"
+    >
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item to="/home">
+          <q-item-section>Home</q-item-section>
+        </q-item>
+        <q-expansion-item default-opened dense-toggle label="About">
+          <q-item to="/history">
+            <q-item-section>Storia</q-item-section>
+          </q-item>
+          <q-item to="/who-are-we">
+            <q-item-section>Chi siamo</q-item-section>
+          </q-item>
+          <q-item to="/organizational-chart">
+            <q-item-section>Organigramma</q-item-section>
+          </q-item>
+        </q-expansion-item>
+        <q-item to="/projects">
+          <q-item-section>Progetti</q-item-section>
+        </q-item>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-separator class="q-mt-lg" color="white-12" />
+
+        <q-item>
+          <q-item-section>
+            <a href="https://www.facebook.com/agegiovani/" target="_blank">
+              Facebook
+            </a>
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <a href="https://www.facebook.com/agegiovani/" target="_blank">
+              Instagram
+            </a>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -43,77 +128,28 @@
 </template>
 
 <script>
-import EssentialLink from "components/EssentialLink.vue";
-
-const linksList = [
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
-  },
-  {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
-  },
-];
-
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "MainLayout",
-
-  components: {
-    EssentialLink,
-  },
 
   setup() {
     const leftDrawerOpen = ref(false);
     const bannerOpen = ref(true);
 
     return {
-      essentialLinks: linksList,
       leftDrawerOpen,
       bannerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      toggleBanner() {
-        bannerOpen.value = false;
-      },
     };
   },
 });
 </script>
+
+<style lang="scss">
+.svg-logo {
+  fill: $white;
+}
+</style>
