@@ -10,24 +10,21 @@
     </q-carousel>
     <!--Chi Siamo section-->
     <ChiSiamoComponent />
-    <br />
-    <v-divider></v-divider>
-    <br />
     <!--IG-->
     <IgComponent />
-    <br />
-    <v-divider></v-divider>
-    <br />
     <!--ListaProgetti-->
-    <!--<div class="q-ma-none">-->
-    <!--<q-list :bordered="true">-->
+    <div class="q-ma-none">
+    <q-list :bordered="true">
     <ListItemComponent
       v-for="item in projects"
       :key="item.index"
       v-bind="item"
     />
-    <!--</q-list>-->
-    <!--</div>-->
+    </q-list>
+    </div>
+    <ListItemComponentLeft v-for="item in projects"
+      :key="item.index"
+      v-bind="item"/>
   </q-page>
 </template>
 
