@@ -1,50 +1,43 @@
 <template>
-  <!--<q-item :tabindex="index">-->
-    <div class="q-pt-lg q-mt-lg q-mb-lg q-pa-sx row items-start twoside justify-center">
-      <div class="q-ma-lg oneside row justify-center">
-        <div class="q-mb-lg text-h4 text-weight-light">
+<div class="q-ma-xl" :class=" index%2==0 ? 'row' : 'row reverse'">
+    <div class="text-center col">
+      <div class="text-h4 text-weight-light">
         {{ title }}
-        </div>
-        <div class="q-mb-lg text-weight-light">
-          {{ text }}
-        </div>
-          <q-btn outline color="primary" label="More Details" />
       </div>
-      <div class="q-ma-md oneside row justify-center">
-        <q-card class="my-card">
-          <q-responsive :ratio="1" class="col" style="max-height:278px">
-            <q-img :src=picture>
-            </q-img>
-          </q-responsive>
-        </q-card>
+      <div class="q-mt-lg text-weight-light">
+        {{ text }}
+
       </div>
+      <q-btn outline color="primary" label="Scopri di più" class="q-mt-lg" />
     </div>
-  <!--</q-item>-->
+    <div class="col q-ml-lg text-center">
+      <q-img :src="picture" class="image" />
+    </div>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'ListItemComponent',
+  name: "ListItemComponent",
   props: {
     index: {
       type: Number,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
-
+      required: true,
     },
-    text:{
+    text: {
       type: String,
-      required: true
+      required: true,
     },
-    picture:{
-        type: String,
-        required: true
-    }
-  }
-})
+    picture: {
+      type: String,
+      required: true,
+    },
+  },
+});
 </script>
