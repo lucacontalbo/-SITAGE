@@ -1,26 +1,35 @@
 <template>
-      <q-carousel-slide :name=name :img-src=picture>
-        <div class="absolute-bottom custom-caption">
-          <div class="text-h2">First stop</div>
-          <div class="text-subtitle1">Mountains</div>
-        </div>
-      </q-carousel-slide>
+  <q-carousel-slide :name="name" :img-src="picture">
+    <div class="absolute-bottom custom-caption">
+      <div class="text-h2">First stop</div>
+      <div class="text-subtitle1">Mountains</div>
+    </div>
+  </q-carousel-slide>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'CarouselComponent',
+  name: "CarouselComponent",
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
-    picture:{
+    picture: {
       type: String,
-      required: true
-    }
-  }
-})
+      required: true,
+    },
+  },
+});
 </script>
+
+<style>
+.custom-caption {
+  text-align: center;
+  padding: 12px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+</style>
