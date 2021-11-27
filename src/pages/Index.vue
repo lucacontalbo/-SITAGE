@@ -1,15 +1,7 @@
 <template>
   <q-page>
-    <!--Carousel-->
-    <q-carousel arrows animated v-model="slide" class="carusel">
-      <CarouselComponent
-        v-for="image in images"
-        :key="image.picture"
-        v-bind="image"
-      />
-    </q-carousel>
-    <!--Chi Siamo section-->
-    <ChiSiamoComponent />
+    <CarouselSection />
+    <ChiSiamoSection />
     <!--IG-->
     <IgComponent />
     <!--ListaProgetti-->
@@ -30,26 +22,10 @@
 
 <script>
 import { defineComponent } from "vue";
-import { ref } from "vue";
-import CarouselComponent from "components/CarouselComponent.vue";
-import ChiSiamoComponent from "components/ChiSiamoComponent.vue";
+import CarouselSection from "src/components/CarouselSection.vue";
+import ChiSiamoSection from "src/components/ChiSiamoSection.vue";
 import ListItemComponent from "components/ListItemComponent.vue";
 import IgComponent from "components/IgComponent.vue";
-
-const imgList = [
-  {
-    name: "first",
-    picture: "carousel/1.jpg",
-  },
-  {
-    name: "second",
-    picture: "carousel/2.jpg",
-  },
-  {
-    name: "third",
-    picture: "carousel/3.jpg",
-  },
-];
 
 const projList = [
   {
@@ -72,31 +48,21 @@ const projList = [
   },
 ];
 
-//const test = {
-//  index: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-//}
-
 export default defineComponent({
   name: "Index",
   components: {
-    CarouselComponent,
-    ChiSiamoComponent,
+    CarouselSection,
+    ChiSiamoSection,
     ListItemComponent,
     IgComponent,
   },
 
   setup() {
     return {
-      images: imgList,
       projects: projList,
-      slide: ref("first"),
     };
   },
 });
 </script>
 
-<style lang="scss">
-.q-carousel {
-  height: calc(100vh - 50px);
-}
-</style>
+<style lang="scss"></style>
