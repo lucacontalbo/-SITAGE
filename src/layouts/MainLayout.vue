@@ -15,6 +15,13 @@
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
+      <q-banner inline-actions class="text-white bg-red text-center" v-if="bannerOpen">
+      Dona al nostro 5x1000 o piango
+      <template v-slot:action>
+        <q-btn flat color="white" label="DONA!"></q-btn>
+        <q-btn flat color="white" icon="close" @click="bannerOpen=false"></q-btn>
+      </template>
+    </q-banner>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
@@ -94,12 +101,17 @@ export default defineComponent({
 
   setup() {
     const leftDrawerOpen = ref(false);
+    const bannerOpen = ref(true);
 
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
+      bannerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
+      },
+      toggleBanner() {
+        bannerOpen.value = false;
       },
     };
   },
