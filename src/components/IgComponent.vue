@@ -32,7 +32,7 @@
         <div v-show="expanded">
           <q-separator />
           <q-card-section class="text-subitle2">
-              Lorem ipsum di prova
+              {{ text1 }}
           </q-card-section>
         </div>
       </q-slide-transition>
@@ -115,19 +115,15 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from 'vue';
+import { text1 } from '/ig/0_ig.txt';
 
 export default defineComponent({
   name: 'ListItemComponent',
-  props: {
-    index: {
-      type: String,
-      required: false
-    }
-  },
   setup(){
       return {
-          expanded: ref(false)
+          expanded: ref(false),
+          text1: text1
       }
   }
 })
