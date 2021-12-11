@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpr lFf">
+  <q-layout view="hHh lpr fff">
     <q-header elevated class="q-pa-none bg-primary">
       <q-toolbar>
         <q-btn
@@ -123,6 +123,28 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-footer class="row">
+      <div class="col text-center">
+        <!--LOCATION-->
+        <div class="text-h4 text-weight-light">LOCATION</div>
+        <!--width="600"
+          height="450"-->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.334676109828!2d10.628121715184056!3d44.692365679099346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47801c583ebe73b9%3A0x1c01d12d02d7a4fc!2sVia%20Francesco%20Cassoli%2C%201%2C%2042123%20Reggio%20Emilia%20RE!5e0!3m2!1sit!2sit!4v1639220644003!5m2!1sit!2sit"
+          style="border: 0"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="col text-center">
+        <!--KONTATTI-->
+        <div class="text-h4 text-weight-light">CONTATTI</div>
+        <ul>
+          <li>MAIL</li>
+          <li>FACEBOOK</li>
+          <li>INSTAGRAM</li>
+        </ul>
+      </div>
+    </q-footer>
   </q-layout>
 </template>
 

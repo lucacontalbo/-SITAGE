@@ -6,12 +6,12 @@
     <IgComponent />
     <!--ListaProgetti-->
     <div class="q-ma-none">
-    <q-list :bordered="true">
-      <ListItemComponent
-        v-for="item in projects"
-        :key="item.index"
-        v-bind="item"
-      />
+      <q-list>
+        <ListItemComponent
+          v-for="item in projects"
+          :key="item.index"
+          v-bind="item"
+        />
       </q-list>
     </div>
   </q-page>

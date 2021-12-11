@@ -1,12 +1,11 @@
 <template>
-<div class="q-ma-xl" :class=" index%2==0 ? 'row' : 'row reverse'">
+  <div class="q-ma-xl" :class="index % 2 == 0 ? 'row' : 'row reverse'">
     <div class="text-center col">
       <div class="text-h4 text-weight-light">
         {{ title }}
       </div>
       <div class="q-mt-lg text-weight-light">
         {{ text }}
-
       </div>
       <q-btn outline color="primary" label="Scopri di più" class="q-mt-lg" />
     </div>
