@@ -139,9 +139,31 @@
         <!--KONTATTI-->
         <div class="text-h4 text-weight-light">CONTATTI</div>
         <ul>
-          <li>MAIL</li>
-          <li>FACEBOOK</li>
-          <li>INSTAGRAM</li>
+          <li>
+            <img
+              svg-inline
+              class="svg-logo"
+              src="../assets/logos/mailicon.svg"
+              alt="Instagram logo"
+            />
+            EMAIL
+          </li>
+          <li>
+            <img
+              svg-inline
+              class="svg-logo"
+              src="../assets/logos/facebook.svg"
+              alt="Instagram logo"
+            />FACEBOOK
+          </li>
+          <li>
+            <img
+              svg-inline
+              class="svg-logo"
+              src="../assets/logos/instagram.svg"
+              alt="Instagram logo"
+            />INSTAGRAM
+          </li>
         </ul>
       </div>
     </q-footer>
@@ -172,5 +194,17 @@ export default defineComponent({
 <style lang="scss">
 .svg-logo {
   fill: $white;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  display: list-item;
+  padding: 5px;
+}
+.svg-logo {
+  vertical-align: middle;
+  display: inline-block;
 }
 </style>
