@@ -1,31 +1,26 @@
-# Quasar App (test)
+# AGE website (age-website)
 
-A Quasar Framework app
+AGE website
 
 ## Install the dependencies
-
 ```bash
-npm install
+yarn
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
-
 ```bash
 quasar dev
 ```
 
 ### Lint the files
-
 ```bash
-npm run lint
+yarn run lint
 ```
 
 ### Build the app for production
-
 ```bash
 quasar build
 ```
 
 ### Customize the configuration
-
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
