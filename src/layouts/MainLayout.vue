@@ -97,10 +97,6 @@
             <q-item-section>Organigramma</q-item-section>
           </q-item>
         </q-expansion-item>
-        <q-item to="/projects">
-          <q-item-section>Progetti</q-item-section>
-        </q-item>
-
         <q-separator class="q-mt-lg" color="white-12" />
 
         <q-item>
@@ -117,6 +113,9 @@
             </a>
           </q-item-section>
         </q-item>
+        <q-item>
+          <q-select v-model="model" :options="options" label="Italiano" />
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -126,7 +125,7 @@
     <q-footer class="row">
       <div class="col text-center">
         <!--LOCATION-->
-        <div class="text-h4 text-weight-light">LOCATION</div>
+        <div class="text-h4 text-weight-light">DOVE SIAMO</div>
         <!--width="600"
           height="450"-->
         <iframe
