@@ -90,16 +90,16 @@
         </q-item>
         <q-expansion-item default-opened dense-toggle label="About">
           <q-item to="/history">
-            <q-item-section>Storia</q-item-section>
+            <q-item-section class="white">Storia</q-item-section>
           </q-item>
           <q-item to="/who-are-we">
-            <q-item-section>Chi siamo</q-item-section>
+            <q-item-section class="white"> Chi siamo</q-item-section>
           </q-item>
           <q-item to="/organizational-chart">
-            <q-item-section>Organigramma</q-item-section>
+            <q-item-section class="white">Organigramma</q-item-section>
           </q-item>
           <q-item to="/projects">
-            <q-item-section>Progetti</q-item-section>
+            <q-item-section class="white">Progetti</q-item-section>
           </q-item>
         </q-expansion-item>
         <q-separator class="q-mt-lg" color="white-12" />
@@ -222,5 +222,8 @@ export default defineComponent({
 .svg-logo {
   fill: $white;
   vertical-align: middle;
+}
+.white {
+  color: white-12;
 }
 </style>

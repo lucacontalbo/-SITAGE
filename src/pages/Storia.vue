@@ -40,8 +40,8 @@ export default defineComponent({
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.1;
-  background-image: url("./../assets/logos/age.png");
+  opacity: 1;
+  background-image: url("./../assets/logos/project-background.png");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: 50% 100%;
