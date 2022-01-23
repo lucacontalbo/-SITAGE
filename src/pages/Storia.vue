@@ -1,31 +1,56 @@
 <template>
-  <div style="text-align: center" class="container-storia col">
-    <div class="titolo row-12">
-      <h2 class="bold">STORIA AGE</h2>
-    </div>
-    <div class="sottotitolo-l row-3 padmar">
-      <p class="q-ml-xl">sottotitolo 1</p>
-    </div>
-    <div class="paragrafo padmar">
-      <p>la storia di age è bella</p>
-    </div>
-    <div class="sottotitolo-r row-3 padmar minibold">sottotitolo 2</div>
-    <div class="paragrafo padmar">
-      <p>poi io sono ancora più bello</p>
-    </div>
-    <div class="sottotitolo-l row-3 padmar minibold">sottotitolo 3</div>
-    <div class="paragrafo padmar">
-      <p>siamo tutti belli</p>
+  <div class="bg-img-container">
+    <div style="text-align: center" class="container-storia col">
+      <div class="titolo row-12">
+        <h2 class="bold">STORIA AGE</h2>
+      </div>
+      <div class="sottotitolo-l row-3 padmar">
+        <p class="my-mar-left">sottotitolo 1</p>
+      </div>
+      <div class="paragrafo padmar">
+        <p>la storia di age è bella</p>
+      </div>
+      <div class="sottotitolo-r row-3 padmar minibold">
+        <p class="my-mar-right">sottotitolo 2</p>
+      </div>
+      <div class="paragrafo padmar">
+        <p>poi io sono ancora più bello</p>
+      </div>
+      <div class="sottotitolo-l row-3 padmar minibold">
+        <p class="my-mar-left">sottotitolo 3</p>
+      </div>
+      <div class="paragrafo padmar">
+        <p>siamo tutti belli</p>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {},
 });
 </script>
 <style scoped>
+.bg-img-container:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url("./../assets/logos/age.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: 50% 100%;
+}
+
+.bg-img-container {
+  position: relative;
+}
+
 .padmar {
   padding: 10px;
   margin: 10px;
@@ -34,6 +59,12 @@ export default defineComponent({
   font-weight: 500;
 }
 
+.my-mar-left {
+  margin-left: 250px;
+}
+.my-mar-right {
+  margin-right: 250px;
+}
 .titolo {
   text-align: center;
   font-size: large;
@@ -53,5 +84,8 @@ export default defineComponent({
 
 .paragrafo {
   color: red;
+}
+.container-storia * {
+  opacity: 1;
 }
 </style>
