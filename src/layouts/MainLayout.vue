@@ -62,7 +62,7 @@
       <q-banner
         v-if="bannerOpen"
         inline-actions
-        class="bg-negative text-center text-white"
+        class="absolute bg-negative full-width text-center text-white"
       >
         Dona al nostro 5x1000 o piango
         <template #action>

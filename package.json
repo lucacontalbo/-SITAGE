@@ -10,7 +10,9 @@
     "lint:style": "stylelint \"src/**/*.{css,scss,vue}\" --fix --report-needless-disables",
     "lint": "yarn lint:script && yarn lint:style",
     "test": "echo \"No test specified\" && exit 0",
-    "format": "prettier --write \"**/*.{json,md,graphql,vue,js,ts}\" --ignore-path .gitignore"
+    "format": "prettier --write \"**/*.{json,md,graphql,vue,js,ts}\" --ignore-path .gitignore",
+    "dev": "quasar dev",
+    "build": "quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.12.4",
