@@ -3,5 +3,11 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.validate": ["css", "scss", "vue"],
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint",
+    "source.fixAll.stylelint"
+  ]
 }

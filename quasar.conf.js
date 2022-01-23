@@ -21,7 +21,7 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
-    boot: [],
+    boot: ["i18n"],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ["app.scss"],
@@ -82,7 +82,9 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      https: false,
+      server: {
+        type: "http",
+      },
       port: 8080,
       open: true, // opens browser window automatically
     },
@@ -107,7 +109,7 @@ module.exports = configure(function (ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    animations: ["fadeIn", "fadeOut"],
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
@@ -148,9 +150,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
-        description: `A Quasar Framework app`,
+        name: `AGE website`,
+        short_name: `AGE website`,
+        description: `AGE website`,
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",
@@ -213,7 +215,7 @@ module.exports = configure(function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: "test",
+        appId: "age-website",
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain

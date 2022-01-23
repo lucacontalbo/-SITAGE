@@ -1,6 +1,6 @@
 <template>
-  <div class="row q-ma-xl">
-    <div class="text-center col">
+  <div class="q-ma-xl row">
+    <div class="col text-center">
       <div class="text-h4 text-weight-light">Chi siamo?</div>
       <div class="q-mt-lg text-weight-light">
         Associazione Giovani in Europa - APS, abbreviabile in “AGE”, è una
@@ -24,11 +24,11 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "ChiSiamoComponent",
+  name: "ChiSiamoSection",
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .image {
   height: 300px;
 }

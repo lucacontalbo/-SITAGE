@@ -13,13 +13,13 @@
     >
       <q-carousel-slide
         v-for="{ name, picture } in slides"
+        :key="name"
         :name="name"
         :img-src="picture"
-        :key="name"
       >
       </q-carousel-slide>
     </q-carousel>
-    <div class="absolute-bottom q-pb-lg text-center text-white bg-black-28">
+    <div class="absolute-bottom bg-black-28 q-pb-lg text-center text-white">
       <div class="text-h2">First stop</div>
       <div class="text-subtitle1">Mountains</div>
     </div>
@@ -45,7 +45,7 @@ const slides = [
 ];
 
 export default defineComponent({
-  name: "CarouselComponent",
+  name: "CarouselSection",
   setup() {
     const currentSlide = ref("first");
     return { currentSlide, slides, autoplay: ref(true) };
@@ -53,7 +53,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .q-carousel {
   height: calc(100vh - 50px);
 }
