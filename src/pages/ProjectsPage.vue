@@ -1,17 +1,13 @@
 <template>
   <q-page>
     <div class="q-ma-none">
-      <q-layout
-        view="hHh Lpr lff"
-        container
-        style="height: 100vh"
-        class="shadow-2 rounded-borders"
-      >
+      <q-layout view="hHh Lpr lff" container class="rounded-borders shadow-2">
         <q-drawer
           v-model="drawer"
           show-if-above
           :width="200"
           :breakpoint="500"
+          page-height
           bordered
           class="bg-grey-3"
         >
@@ -21,9 +17,8 @@
                 v-for="proj in projList"
                 :key="proj.index"
                 v-bind="proj"
-                :active="default_index == proj.index"
+                :active="default_index === proj.index"
                 clickable
-                v-ripple
                 @click="default_index = proj.index"
               >
                 <q-item-section avatar>
@@ -35,7 +30,7 @@
             </q-list>
           </q-scroll-area>
         </q-drawer>
-        <ProjectComponent :default_index="default_index" />
+        <project-component :default_index="default_index" />
       </q-layout>
     </div>
   </q-page>
@@ -47,7 +42,7 @@ import ProjectComponent from "components/ProjectComponent.vue";
 import projList from "assets/json/Projects.json";
 
 export default defineComponent({
-  name: "Progetti",
+  name: "ProjectsPage",
   components: {
     ProjectComponent,
   },
@@ -60,4 +55,8 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.page-height {
+  height: 100vh;
+}
+</style>

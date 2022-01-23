@@ -1,16 +1,9 @@
 <template>
-  <!--
-        Sposta il v for in Progetti.vue, fai funzionare l'index che deve mostrare solo il progetto scelto
-        Sposta il q-layout dentro MainLayout e digli di mostrare il q drawer e resto solo quando viene caricata la pagina
-      -->
+  <p>diocane<br /><br /><br /><br /><br />aaa</p>
   <div v-for="proj in projList" :key="proj.index" v-bind="proj">
-    <div v-if="proj.index === default_index">
-      <q-img
-        :src="proj.picture"
-        spinner-color="white"
-        style="height: 300px; max-width: 100%"
-      >
-        <div class="absolute-bottom text-subtitle1 text-center">
+    <div v-if="proj.index === defaultIndex">
+      <q-img :src="proj.picture" spinner-color="white" image-dim>
+        <div class="absolute-bottom text-center text-subtitle1">
           {{ proj.title }}
         </div>
       </q-img>
@@ -25,15 +18,17 @@
 
 <script>
 import { defineComponent } from "vue";
-import { QMarkdown } from "@quasar/quasar-ui-qmarkdown";
 import "@quasar/quasar-ui-qmarkdown/dist/index.css";
 import projList from "assets/json/Projects.json";
 
 export default defineComponent({
-  name: "Progetti",
+  name: "ProjectComponent",
   components: {},
   props: {
-    default_index: Number,
+    defaultIndex: {
+      type: Number,
+      default: 0,
+    },
   },
   setup() {
     return {
@@ -43,4 +38,9 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.image-dim {
+  height: 300px;
+  max-width: 100%;
+}
+</style>

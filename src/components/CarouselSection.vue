@@ -1,10 +1,10 @@
 <template>
   <div class="relative-position">
     <q-carousel
+      v-model="currentSlide"
       infinite
       arrows
       animated
-      v-model="currentSlide"
       :autoplay="autoplay"
       transition-prev="slide-right"
       transition-next="slide-left"

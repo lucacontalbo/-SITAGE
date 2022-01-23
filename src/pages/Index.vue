@@ -21,16 +21,11 @@
 import IgComponent from "components/IgComponent.vue";
 import CarouselSection from "src/components/CarouselSection.vue";
 import ChiSiamoSection from "src/components/ChiSiamoSection.vue";
-<<<<<<< HEAD
-import ListItemComponent from "components/ListItemComponent.vue";
-import IgComponent from "components/IgComponent.vue";
-import projList from "assets/json/Projects.json";
-=======
 import ProjectItem from "src/components/ProjectItem.vue";
 import { defineComponent } from "vue";
->>>>>>> 6bf0f0c48a09936f21622901980e9b75248ea2de
+import projList from "assets/json/Projects.json";
 
-projList = projList.slice(0, 3);
+//projList = projList.slice(0, 3);
 
 export default defineComponent({
   name: "IndexPage",
