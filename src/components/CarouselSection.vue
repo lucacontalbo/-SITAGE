@@ -1,6 +1,16 @@
 <template>
   <div class="relative-position">
-    <q-carousel infinite arrows animated v-model="currentSlide">
+    <q-carousel
+      infinite
+      arrows
+      animated
+      v-model="currentSlide"
+      :autoplay="autoplay"
+      transition-prev="slide-right"
+      transition-next="slide-left"
+      @mouseenter="autoplay = false"
+      @mouseleave="autoplay = true"
+    >
       <q-carousel-slide
         v-for="{ name, picture } in slides"
         :name="name"
@@ -38,7 +48,7 @@ export default defineComponent({
   name: "CarouselComponent",
   setup() {
     const currentSlide = ref("first");
-    return { currentSlide, slides };
+    return { currentSlide, slides, autoplay: ref(true) };
   },
 });
 </script>
