@@ -126,6 +126,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
     <q-footer class="row">
       <div class="col text-center">
         <!--LOCATION-->

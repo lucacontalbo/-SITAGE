@@ -1,4 +1,4 @@
-//ENGLISH
+//ITALIANO
 
 export default {
   failed: 'Action failed',
