@@ -6,7 +6,7 @@ module.exports = {
 
   parserOptions: {
     parser: "@babel/eslint-parser",
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+    ecmaVersion: "latest", // Allows for the parsing of modern ECMAScript features
     sourceType: "module", // Allows for the use of imports
   },
 
@@ -17,14 +17,14 @@ module.exports = {
   // Rules order is important, please avoid shuffling them
   extends: [
     // Base ESLint recommended rules
-    // 'eslint:recommended',
+    "eslint:recommended",
 
     // Uncomment any of the lines below to choose desired strictness,
     // but leave only one uncommented!
     // See https://eslint.vuejs.org/rules/#available-rules
-    "plugin:vue/vue3-essential", // Priority A: Essential (Error Prevention)
+    // "plugin:vue/vue3-essential", // Priority A: Essential (Error Prevention)
     // 'plugin:vue/vue3-strongly-recommended', // Priority B: Strongly Recommended (Improving Readability)
-    // 'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
+    "plugin:vue/vue3-recommended", // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
     // https://github.com/prettier/eslint-config-prettier#installation
     // usage with Prettier, provided by 'eslint-config-prettier'.
@@ -56,9 +56,35 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    // --- Base ESLint ---
     "prefer-promise-reject-errors": "off",
+    curly: "error",
+    "no-else-return": ["warn", { allowElseIf: false }],
+    eqeqeq: "error",
+    "no-alert": "warn",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+    "prefer-const": "warn",
+    "no-redeclare": "off",
 
-    // allow debugger during development only
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    // --- Vue ---
+    "vue/eqeqeq": "error",
+    "vue/block-lang": ["error", { style: { lang: "scss" } }],
+    "vue/component-name-in-template-casing": ["error", "kebab-case"],
+    "vue/custom-event-name-casing": "warn",
+    "vue/html-comment-content-spacing": "warn",
+    "vue/html-comment-indent": "warn",
+    "vue/html-comment-content-newline": "warn",
+    "vue/no-deprecated-v-is": "error",
+    "vue/no-duplicate-attr-inheritance": "error",
+    "vue/no-empty-component-block": "warn",
+    "vue/no-static-inline-styles": "warn",
+    "vue/no-unused-properties": ["warn", { groups: ["props", "setup"] }],
+    "vue/no-useless-v-bind": "warn",
+    "vue/padding-line-between-blocks": "warn",
+    "vue/require-emit-validator": "error",
+    "vue/require-name-property": "error",
+    "vue/static-class-names-order": "warn",
+    "vue/v-for-delimiter-style": "warn",
+    "vue/v-on-event-hyphenation": "error",
   },
 };

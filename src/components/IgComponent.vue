@@ -1,9 +1,9 @@
 <template>
   <div class="cont">
-    <div class="q-pt-lg q-mt-lg q-mb-lg q-pa-sx row items-start justify-center">
+    <div class="items-start justify-center q-mb-lg q-mt-lg q-pa-sx q-pt-lg row">
       <div v-for="(url, index) in urlImages" :key="index" v-bind="url">
-        <div class="q-pa-md row items-stretch q-gutter-md">
-          <!--TODO: keep q-cards sizes fixed. (e.g. when loading, the size dinamically changes based on the num of cards loaded)-->
+        <div class="items-stretch q-gutter-md q-pa-md row">
+          <!-- TODO: keep q-cards sizes fixed. (e.g. when loading, the size dinamically changes based on the num of cards loaded) -->
           <q-card class="card-ig" flat bordered>
             <q-img :src="url.media_url" />
 
@@ -42,16 +42,10 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 
 export default defineComponent({
-  name: "ListItemComponent",
-  props: {
-    index: {
-      type: String,
-      required: false,
-    },
-  },
+  name: "IgComponent",
   setup() {
     const expanded = ref(false);
     const urlImages = ref([]);
@@ -86,9 +80,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card-ig {
-  width: 100%;
-  //height: 30vh;
   max-width: 350px;
+  width: 100%;
 }
 
 .cont {

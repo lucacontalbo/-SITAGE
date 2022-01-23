@@ -1,50 +1,55 @@
 <template>
   <div class="bg-img-container">
-    <div style="text-align: center" class="container-storia col">
-      <div class="titolo row-12">
+    <div class="col container-storia text-center">
+      <div class="row-12 titolo">
         <h2 class="bold">STORIA AGE</h2>
       </div>
-      <div class="sottotitolo-l row-3 padmar">
+      <div class="padmar row-3 sottotitolo-l">
         <p class="my-mar-left">sottotitolo 1</p>
       </div>
-      <div class="paragrafo padmar">
+      <div class="padmar paragrafo">
         <p>la storia di age è bella</p>
       </div>
-      <div class="sottotitolo-r row-3 padmar minibold">
+      <div class="minibold padmar row-3 sottotitolo-r">
         <p class="my-mar-right">sottotitolo 2</p>
       </div>
-      <div class="paragrafo padmar">
+      <div class="padmar paragrafo">
         <p>poi io sono ancora più bello</p>
       </div>
-      <div class="sottotitolo-l row-3 padmar minibold">
+      <div class="minibold padmar row-3 sottotitolo-l">
         <p class="my-mar-left">sottotitolo 3</p>
       </div>
-      <div class="paragrafo padmar">
+      <div class="padmar paragrafo">
         <p>siamo tutti belli</p>
       </div>
     </div>
   </div>
 </template>
+
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
+  name: "StoriaPage",
   setup() {},
 });
 </script>
-<style scoped>
-.bg-img-container:before {
-  content: " ";
+
+<style lang="scss" scoped>
+.bg-img-container::before {
+  background-image: url("./../assets/logos/age.png");
+  background-image: url("./../assets/logos/project-background.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: 50% 100%;
+  content: "";
   display: block;
-  position: absolute;
+  height: 100%;
   left: 0;
+  opacity: 0.1;
+  opacity: 1;
+  position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  opacity: 1;
-  background-image: url("./../assets/logos/project-background.png");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: 50% 100%;
 }
 
 .bg-img-container {
@@ -52,9 +57,10 @@ export default defineComponent({
 }
 
 .padmar {
-  padding: 10px;
   margin: 10px;
+  padding: 10px;
 }
+
 .minibold {
   font-weight: 500;
 }
@@ -62,12 +68,14 @@ export default defineComponent({
 .my-mar-left {
   margin-left: 250px;
 }
+
 .my-mar-right {
   margin-right: 250px;
 }
+
 .titolo {
-  text-align: center;
   font-size: large;
+  text-align: center;
 }
 
 .bold {
@@ -83,8 +91,9 @@ export default defineComponent({
 }
 
 .paragrafo {
-  color: red;
+  color: #f00;
 }
+
 .container-storia * {
   opacity: 1;
 }

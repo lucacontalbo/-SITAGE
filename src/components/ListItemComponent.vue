@@ -1,6 +1,6 @@
 <template>
-  <div class="q-ma-xl" :class="index % 2 == 0 ? 'row' : 'row reverse'">
-    <div class="text-center col">
+  <div class="q-ma-xl" :class="index % 2 === 0 ? 'row' : 'row reverse'">
+    <div class="col text-center">
       <div class="text-h4 text-weight-light">
         {{ title }}
       </div>

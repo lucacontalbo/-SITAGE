@@ -1,13 +1,13 @@
 <template>
   <q-page>
-    <CarouselSection />
-    <ChiSiamoSection />
-    <!--IG-->
-    <IgComponent />
-    <!--ListaProgetti-->
+    <carousel-section />
+    <chi-siamo-section />
+    <!-- IG -->
+    <ig-component />
+    <!-- ListaProgetti -->
     <div class="q-ma-none">
       <q-list>
-        <ListItemComponent
+        <list-item-component
           v-for="item in projects"
           :key="item.index"
           v-bind="item"
@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import IgComponent from "components/IgComponent.vue";
+import ListItemComponent from "components/ListItemComponent.vue";
 import CarouselSection from "src/components/CarouselSection.vue";
 import ChiSiamoSection from "src/components/ChiSiamoSection.vue";
-import ListItemComponent from "components/ListItemComponent.vue";
-import IgComponent from "components/IgComponent.vue";
+import { defineComponent } from "vue";
 
 const projList = [
   {
@@ -46,7 +46,7 @@ const projList = [
 ];
 
 export default defineComponent({
-  name: "Index",
+  name: "IndexPage",
   components: {
     CarouselSection,
     ChiSiamoSection,
