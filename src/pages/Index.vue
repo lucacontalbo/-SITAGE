@@ -7,7 +7,7 @@
     <!-- ListaProgetti -->
     <div class="q-ma-none">
       <q-list>
-        <list-item-component
+        <project-item
           v-for="item in projects"
           :key="item.index"
           v-bind="item"
@@ -19,9 +19,9 @@
 
 <script>
 import IgComponent from "components/IgComponent.vue";
-import ListItemComponent from "components/ListItemComponent.vue";
 import CarouselSection from "src/components/CarouselSection.vue";
 import ChiSiamoSection from "src/components/ChiSiamoSection.vue";
+import ProjectItem from "src/components/ProjectItem.vue";
 import { defineComponent } from "vue";
 
 const projList = [
@@ -50,7 +50,7 @@ export default defineComponent({
   components: {
     CarouselSection,
     ChiSiamoSection,
-    ListItemComponent,
+    ProjectItem,
     IgComponent,
   },
 

@@ -35,7 +35,7 @@ const slides = [
 ];
 
 export default defineComponent({
-  name: "CarouselComponent",
+  name: "CarouselSection",
   setup() {
     const currentSlide = ref("first");
     return { currentSlide, slides };
