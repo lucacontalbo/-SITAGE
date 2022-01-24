@@ -48,7 +48,9 @@ export default defineComponent({
   name: "CarouselSection",
   setup() {
     const currentSlide = ref("first");
-    return { currentSlide, slides, autoplay: ref(true) };
+    const autoplay = ref(true);
+
+    return { currentSlide, slides, autoplay };
   },
 });
 </script>
