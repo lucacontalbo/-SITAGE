@@ -20,20 +20,9 @@ import { defineComponent } from "vue";
 import "@quasar/quasar-ui-qmarkdown/dist/index.css";
 import projList from "assets/json/Projects.json";
 
-/*for (let i = 1; i < projList.length; i++) {
-  document.getElementById("proj" + i).style.display = "none";
-}
-document.getElementById("proj0").style.display = "inline-block";*/
-
 export default defineComponent({
   name: "ProjectComponent",
   components: {},
-  //props: {
-  //  defaultIndex: {
-  //    type: Number,
-  //    default: 0,
-  //  },
-  //},
   setup() {
     return {
       projList,
