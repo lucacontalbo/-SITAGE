@@ -1,5 +1,4 @@
 <template>
-  <p>diocane<br /><br /><br /><br /><br />aaa</p>
   <div v-for="proj in projList" :key="proj.index" v-bind="proj">
     <div v-if="proj.index === defaultIndex">
       <q-img :src="proj.picture" spinner-color="white" image-dim>
