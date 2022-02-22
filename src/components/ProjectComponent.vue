@@ -1,6 +1,6 @@
 <template>
   <div v-for="proj in projList" :key="proj.index" v-bind="proj">
-    <div v-if="proj.index === defaultIndex">
+    <div :id="'proj' + proj.index">
       <q-img :src="proj.picture" spinner-color="white" image-dim>
         <div class="absolute-bottom text-center text-subtitle1">
           {{ proj.title }}
@@ -20,19 +20,35 @@ import { defineComponent } from "vue";
 import "@quasar/quasar-ui-qmarkdown/dist/index.css";
 import projList from "assets/json/Projects.json";
 
+/*for (let i = 1; i < projList.length; i++) {
+  document.getElementById("proj" + i).style.display = "none";
+}
+document.getElementById("proj0").style.display = "inline-block";*/
+
 export default defineComponent({
   name: "ProjectComponent",
   components: {},
-  props: {
-    defaultIndex: {
-      type: Number,
-      default: 0,
-    },
-  },
+  //props: {
+  //  defaultIndex: {
+  //    type: Number,
+  //    default: 0,
+  //  },
+  //},
   setup() {
     return {
       projList,
     };
+  },
+  methods: {
+    update: function (idx) {
+      for (let i = 0; i < projList.length; i++) {
+        if (i !== idx) {
+          document.getElementById("proj" + i).style.display = "none";
+        } else {
+          document.getElementById("proj" + i).style.display = "inline-block";
+        }
+      }
+    },
   },
 });
 </script>
